@@ -1,0 +1,104 @@
+---
+title: "Grimoire of Linear Algebra"
+author: "Don Li"
+date: "09/04/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Magic is simply the use of symbolism to reorganise the world into the state that is desired.
+
+# Matrix arithmetic
+$\mathbf{X}$ is a matrix. Lower case variables are scalars
+
+$\mathbf{X}(v+w) = \mathbf{X}v + \mathbf{X}w$
+
+$\mathbf{X} v \mathbf{Y} = v \mathbf{X} \mathbf{Y}$
+
+$\mathbf{X} \mathbf{I} = \mathbf{I} \mathbf{X}$
+
+$\mathbf{X} \mathbf{X}^{-1} = \mathbf{X}^{-1} \mathbf{X} = \mathbf{I}$
+
+$(\mathbf{X} \mathbf{Y})^{-1} = \mathbf{Y}^{-1} \mathbf{X}^{-1}$
+
+$(\mathbf{X}^{T})^{T} = \mathbf{X}$
+
+$(\mathbf{XY}^{T}) = \mathbf{Y}^T \mathbf{X}^T$
+
+$(\mathbf{X}^{-1})^{T} = (\mathbf{X}^{T})^{-1}$
+
+## Orthogonal matrices
+
+If $\mathbf{X}$ is an orthogonal matrix:
+
+$\mathbf{X}^{T} \mathbf{X} = \mathbf{X} \mathbf{X}^{T} = \mathbf{I}$
+
+$\mathbf{X}^{T} = \mathbf{X}^{-1}$
+
+## Pre- and post-multiplying:
+
+Suppose $\mathbf{W} \mathbf{X} \mathbf{Y} = \mathbf{Z}$
+
+$\mathbf{W}^{-1} \mathbf{W} \mathbf{X} \mathbf{Y} = \mathbf{X} \mathbf{Y} = \mathbf{W}^{-1} \mathbf{Z}$
+
+$\mathbf{W} \mathbf{X} \mathbf{Y} \mathbf{Y}^{-1} = \mathbf{W} \mathbf{X} = \mathbf{Z} \mathbf{Y}^{-1}$
+
+
+# Random vectors
+$\mathbf{X}$ is a random vector. All other quantities are deterministic.
+
+$\mathbb{E}(\mathbf{X}+\mathbf{Y}) = \mathbf{X} + \mathbf{Y}$
+
+$\mathbb{E}(v \mathbf{X}) = v \mathbb{E}(\mathbf{X})$
+
+$\mathbb{E}(v) = v$
+
+$Cov(\mathbf{X} + v) = Cov(\mathbf{X})$
+
+$Cov(\mathbf{X} + \mathbf{V}) = \mathbf{V} Cov(\mathbf{X}) \mathbf{V}^{T}$
+
+# Eigenvectors and eigenvalues
+
+$\mathbf{X} \mathbf{v} = \lambda \mathbf{v}$
+$\mathbf{X}$ is a matrix, $\mathbf{v}$ is an eigenvector, and $\lambda$ is the eigenvalue.
+
+Multiplying a matrix by a vector gives the same result as multiplying a scalar by the same vector. Therefore, eigenvalues can be interperted as things at stretch the matrix.
+
+## Finding eigenvalues and eigenvectors:
+$\mathbf{X} \mathbf{v} = \lambda \mathbf{I} \mathbf{v}$
+
+$\mathbf{X} \mathbf{v} - \lambda \mathbf{I} \mathbf{v} = 0$
+
+We solve this equation for $\lambda$. If $\mathbf{v}$ is non-zero, we can use the determinant:
+
+$det(\mathbf{X} - \lambda \mathbf{I}) = 0$
+
+This is the characteristic equation. Once we have the eigenvalues, we can obtain the eigenvectors by solving the linear equations.
+
+# Singular value decomposition
+Given the matrix $\mathbf{X}$ of dimension $N \times p$:
+
+$\mathbf{X} = \mathbf{UDV}^{T}$
+
+where, $\mathbf{U}, \mathbf{V}$ are $N \times p$ and $p \times p$ orthogonal matrices.
+
+The columns of $\mathbf{U}$ span the column space of $\mathbf{X}$, while the columns of $\mathbf{V}$ span the row space of $\mathbf{X}$.
+
+$D$ is a $p \times p$ matrix with diagonals $d_1 \ge d_2 \ge \dots \ge d_p \ge 0$. $d_p$ are the singular values of $\mathbf{X}$.
+
+The SVD of a centered $\mathbf{X}$ gives the principal components.
+
+$\mathbf{X}^{T} \mathbf{X} = \mathbf{V} \mathbf{D}^2 \mathbf{V}^T$ is the eigen-decomposition of $\mathbf{X}^{T} \mathbf{X}$. The eigenvectors $v_j$ (columns of $\mathbf{V}$ are the principal components.
+
+The first principal component of $\mathbf{X}$ is such that: $\mathbf{z}_1 = \mathbf{X}v_1 = \mathbf{u}_1 d_1$. It has variance $\frac {d^2_1} {N}$. Complementary relationships for the $m^th$ components.
+
+
+
+
+
+
