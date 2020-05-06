@@ -31,11 +31,15 @@ $\mathbf{X} \mathbf{X}^{-1} = \mathbf{X}^{-1} \mathbf{X} = \mathbf{I}$
 
 $(\mathbf{X} \mathbf{Y})^{-1} = \mathbf{Y}^{-1} \mathbf{X}^{-1}$
 
+## Matrix transposition
+
 $(\mathbf{X}^{T})^{T} = \mathbf{X}$
 
 $(\mathbf{XY}^{T}) = \mathbf{Y}^T \mathbf{X}^T$
 
 $(\mathbf{X}^{-1})^{T} = (\mathbf{X}^{T})^{-1}$
+
+$(\mathbf{X+Y}^{T}) = \mathbf{X}^T + \mathbf{Y}^T$
 
 ## Orthogonal matrices
 
